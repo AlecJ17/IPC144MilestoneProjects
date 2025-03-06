@@ -1,0 +1,53 @@
+/*/////////////////////////////////////////////////////////////////////////
+                               Reflection
+                        Assignment 1 - Milestone 3
+Full Name  : Alec Josef Serrano
+Student ID#: 133592238
+Email      : ajserrano2@myseneca.ca
+Section    : NAA
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+/////////////////////////////////////////////////////////////////////////*/
+
+Q#1)
+void sortData(struct Appointment appoints[], int max);
+
+	This is designed to sort an array of Appointment structures based on the date and time values. The algorithm used in this function is bubble sort, which will arrange the appointments in ascending order based on their respective scheduled times.
+
+	The purpose of this is to make sure that the appointments that are imported from the appointmentData.txt and patientData.txt are sorted in chronological order based on their date and time. This helps to improve the overall user experience because it is easier to manage the scheduled data. It also promotes code reusability, as this function is being used in this application multiple times whenever there are changes in the appointments.
+
+
+int compareDateTime(const struct Appointment* appoints1, const struct 								              Appointment* appoints2)	
+	This is a custom function that compares two sets of date and time structures from the files that are being imported to the application. This calculates the total date and time values that are converted as integers and returns a value of 1, -1 and 0 depending on the result of comparison.
+
+	This function serves an important role in this application because it helps the sortData function improve its readability and functionality. This allows that function to sort appointments efficiently by offering a standard way to compare appointments. Also, it enhances the overall usability and organization of the application, and it enables the user to manage their schedules with no hassle.
+
+
+
+
+int nextSlotAvailable(struct Appointment* appoints, int maxAppointments);
+
+	This function is made to find the index of the next slot available for scheduling an appointment within the array of Appointment structures. This function takes the array of appointments as input and the maximum number of appointments that are allowed in the application.
+
+	The purpose of this function is to help the application find and determine the location of the next appointment slot more efficiently and it makes the user experience improved by simplifying the scheduling process. This is a valuable and needed additional function to help the performance of the application because it will find the next slot available with zero hassle.
+
+
+Q#2) 	
+	It is a good practice since scanf function is delicate because of its lack of reliability in accepting unexpected inputs. By making a custom input function in the core.c, it provides a more user-friendly experience since it guides the user and makes sure that all the input is within the acceptable ranges or checks the correct patterns which enhance the overall performance of the application. The functions that we initially made, protect the application by preventing buffer overflows which will affect the overall performance of the application it also prevents it from potential security vulnerabilities associated with it. 
+
+	For the possibility of future improvements and modification or enhancement to the input validation process, it can be done less complex since we only need to touch one centralized location which is the core.c. This kind of design eliminates redundancy since the input functions make the code cleaner by getting rid of duplication that promotes the code’s readability.
+
+
+Q#3)
+	I placed each of the three new additional functions inside the clinic.c module under utility functions. I've made that choice since it aligns with the principles in all the given functions in the said part. 
+	
+	For the ‚sortData function, since its logic is to arrange the appointments in the given text files in chronological order, it is kept within the clinic module. This decision makes the code modularity and makes it more organized and easier to maintain.
+
+	I decided to place compareDateTime function in clinic.c under the utility functions because it works to compare dates and times that are imported to that module. Also, it was driven by the need for the code’s modularity and reusability.
+
+	The decision to place ‚nextSlotAvailable function in clinic.c module avoids redundancy in finding the next available appointment slot. By placing this function in the clinic.c module under the utility, there is no other place to put the logic of this elsewhere. This approach makes it easy to maintain easily as if there is any modification needed in the future related to finding the next available slot since it is placed within a single module.
+
+	
